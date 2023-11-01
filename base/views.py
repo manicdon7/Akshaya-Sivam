@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import UserInput
 
 # Create your views here.
 def home(request):
@@ -26,7 +27,8 @@ def faq(request):
 def login(request):
     return render(request,'login.html')
 def causes(request):
-    return render ( request , "causes.html" )
+    items = UserInput.objects.all()
+    return render ( request , "causes.html",{'items': items})
 def Getinvolved(request):
     return render(request,'Get_invloved.html')  
 def volunteer(request):
@@ -41,3 +43,22 @@ def Donate(request):
     return render(request,'Donate.html')
 def exception(request, exception):
     return render(request, '404.html')
+def save_input(request):
+    if request.method == 'POST':
+        image = request.FILES.get('image')
+        name = request.POST.get('name')
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        goal = request.POST.get('goal')
+
+        UserInput.objects.create(
+            image=image,
+            name=name,
+            title=title,
+            description=description,
+            goal=goal
+        )
+
+        return redirect('input_form')
+
+    return render(request, 'test.html')

@@ -74,12 +74,16 @@ WSGI_APPLICATION = 'Yugaas_NGO.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-''' DATABASES = {
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'ngo',
+        'CLIENT': {
+            'host': 'mongodb+srv://manikandan05082003:Manicdon07%40@cluster0.scriurb.mongodb.net/',  # Replace with your MongoDB connection string
+        }
     }
-} '''
+}
+
 
 
 # Password validation

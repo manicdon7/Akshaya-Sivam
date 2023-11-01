@@ -1,3 +1,5 @@
+from django.conf.urls.static import static
+from Yugaas_NGO import settings
 from django.contrib import admin
 from django.urls import path
 from base import views
@@ -11,7 +13,7 @@ urlpatterns = [
     path('aboutus',views.aboutus),
     path('services',views.our_services),
     path('card',views.card),
-    path('contactus',views.contactus),
+    path('contactus',views.contactus),  
     path('faq',views.faq),
     path('aboutus1',views.aboutus1),
     path('aboutus2',views.aboutus2),
@@ -25,12 +27,11 @@ urlpatterns = [
     path('impact',views.impact),
     path('Donate',views.Donate),
     path('foster',views.foster),
+    path('input_form', views.save_input, name='save_input'),
 
     #path('<int:id>/',views.detail)
 
 ]
-from django.conf.urls.static import static
-from Yugaas_NGO import settings
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
