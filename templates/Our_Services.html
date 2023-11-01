@@ -1,0 +1,464 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>our services</title>
+    <link rel="stylesheet" href="../static/Our_Service.css">
+    <script src="https://kit.fontawesome.com/35af595706.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+    <style>
+      /* body{
+        overflow-x: hidden;
+    
+    margin: 0;
+    padding: 0;
+      } */
+      .bg-cover {
+    background-size: cover; /* or background-size: contain; */
+  }
+  
+    /* Mobile Styles */
+    @media (max-width: 1572px) {
+      /* Mobile-specific styles */
+      header {
+        background-color: rgba(14, 14, 14, 1);
+        padding: 10px;
+      }
+      /* Add more mobile styles as needed */
+    }
+  
+    /* Tablet and Desktop Styles */
+    @media (min-width: 1200px) {
+      /* Tablet and desktop-specific styles */
+      header {
+        background-color: rgba(14, 14, 14, 1);
+        padding: 20px;
+      }
+      /* Add more tablet and desktop styles as needed */
+    }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <style>
+       /* Default styles for larger screens */
+       .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(14, 14, 14, 1);
+        padding: 6px 12px;
+      }
+  
+      /* Dropdown styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+  
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(14, 14, 14, 1);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+  
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+  
+      .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+  
+      .dropdown-content a:hover {
+        background-color: black;
+        color: black;
+      }
+  
+      /* Mobile menu styles */
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(14, 14, 14, 1);
+        padding: 10px;
+      }
+  
+      .show-mobile-menu {
+        display: flex; /* Show the mobile menu when the class is applied */
+      }
+  
+      /* Close button styles */
+      .close-button {
+        align-self: flex-end;
+        cursor: pointer;
+        color: white;
+        margin-right: 10px;
+      }
+  
+      /* Mobile dropdown styles */
+      
+  
+      /* Default styles for larger screens */
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(14, 14, 14, 1);
+        padding: 6px 12px;
+      }
+  
+      .donate-button{
+        background: rgba(242, 201, 76, 1);
+        border-radius: 5%;
+      }
+      /* Mobile menu icon styles */
+      .mobile-menu-icon {
+        display: none; /* Initially hide the icon on larger screens */
+        cursor: pointer;
+      }
+  
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+  
+      .nav-menu {
+        display: flex;
+        justify-content: center;
+      }
+  
+      .nav-menu a {
+        margin-right: 15px;
+        color: white;
+        text-decoration: none;
+      }
+  
+      .nav-menu a:hover {
+        color: #F2C94C;
+      }
+  
+      /* Mobile menu styles */
+      .mobile-menu {
+        display: none;
+        flex-direction: row;
+        background-color: rgba(14, 14, 14, 1);
+        padding: 10px;
+      }
+  
+      .show-mobile-menu {
+        display: block; /* Show the menu when the class is applied */
+      }
+  
+      /* Close button styles */
+      .close-button {
+        align-self: flex-end;
+        cursor: pointer;
+        color: white;
+        margin-right: 10px;
+      }
+  
+      @media screen and (max-width: 1200px) {
+        /* Styles for small screens */
+        .nav-container {
+          flex-direction: row;
+          align-items: center;
+        }
+  
+        .mobile-menu-icon {
+          display: block; /* Show the menu icon on small screens */ 
+        }
+        .nav-menu{
+          display: none;
+        }
+  
+        .donate-button {
+          display: none;
+        }
+      }
+      .mobile-dropdown {
+        display: none;
+      }
+  
+      .mobile-dropdown a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+  
+      .mobile-dropdown a:hover {
+        background-color: #F2C94C;
+        color: black;
+      }
+  
+      .show-mobile-menu .mobile-dropdown {
+        display: block;
+      }
+    </style>
+  
+  </head>
+  <body class="overflow-x-hidden">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div class="">
+          <img src="../static/assets/logo-white.png" class="h-14 w-14" />
+        </div>
+        <h2 class="ml-1 text-white">SivaAkshayamTrust</h2>
+      </div>
+      <button class="mobile-menu-icon" id="mobile-menu-icon">
+        <svg height="30" id="IconChangeColor" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="30" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z" id="mainIconPathAttribute" fill="#ffffff"></path></svg>
+      </button>
+      <div class="nav-menu text-sm">
+        <a href="base" class="ml-2">Home</a>
+        <div class="dropdown">
+          <a href="#" class="ml-2">About</a>
+          <div class="dropdown-content">
+            <a href="aboutus1">Maha Akshaya Sivam</a>
+            <a href="aboutus2">Our Motto</a>
+            <a href="aboutus3">Overview</a>
+            <a href="aboutus4">Embracing Humanity</a>
+          </div>
+        </div>
+        <a href="services" class="ml-2">Ourservices</a>
+        <div class="dropdown">
+          <a href="#" class="ml-2">Getinvolved</a>
+          <div class="dropdown-content">
+            <a href="Getinvolved">Join Our Team</a>
+            <a href="volunteer">volunteer opportunities</a>
+            <a href="support">Support the Cause</a>
+            <a href="foster">Fostering Collective Impact</a>
+            <a href="impact">Impact</a>
+          </div>
+        </div>
+        <a href="Causes" class="ml-2">Causes</a> 
+        <a href="faq" class="ml-2">FAQ's</a>
+        <a href="contactus" class="ml-2">ContactUs</a>
+      </div>
+      <div class="donate-button" id="donate-button">
+        <a href="Donate"><button class="h-12 w-40 text-black font-bold hover:text-white">Donate Now</button></a>
+      </div>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <button class="close-button" onclick="closeMobileMenu()">
+        Close
+      </button>
+      <div class="text-md text-white block">
+        <a href="base" class="block ml-1">Home</a>
+        <div class="mobile-dropdown">
+          <a href="#" class="ml-1">About</a>
+          <a href="aboutus1" class="ml-4">Maha Akshaya Sivam</a>
+          <a href="aboutus2" class="ml-4">Out Motto</a>
+          <a href="aboutus3" class="ml-4">Overview</a>
+          <a href="aboutus4" class="ml-4">Embracing Humanity</a>
+        </div>
+        <a href="services" class="ml-1">Our Services</a>
+        <div class="mobile-dropdown">
+          <a href="#">Getinvolved</a>
+          <a href="Getinvolved" class="ml-4">Join Our Team</a>
+          <a href="volunteer" class="ml-4">volunteer opportunities</a>
+          <a href="support" class="ml-4">Support the Cause</a>
+          <a href="foster" class="ml-4">Fostering Collective Impact</a>
+          <a href="impact" class="ml-4">Fostering Collective Impact</a>
+        </div>
+        <a href="Causes" class="ml-1 block">Causes</a> 
+        <a href="faq" class="ml-1 block">FAQ's</a>
+        <a href="contactus" class="ml-1 block">ContactUs</a>
+      </div>
+    </div>
+  
+    <script>
+       // JavaScript to toggle the mobile menu when the icon is clicked
+       const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+       const mobileMenu = document.getElementById('mobile-menu');
+   
+       mobileMenuIcon.addEventListener('click', () => {
+         mobileMenu.classList.toggle('show-mobile-menu');
+       });
+   
+       // JavaScript to close the mobile menu when the close button is clicked
+       function closeMobileMenu() {
+         mobileMenu.classList.remove('show-mobile-menu');
+       }
+    </script>
+    <div class="container">
+        <div class="text flex">
+          <div>
+            <h4 class="font-bold text-lg p-8">OUR SERVICES ______</h4>
+            <h2 class="text-6xl font-bold px-8">empowering communities, <br/>
+              one step at a time</h2>
+        <p class="text-lg font-semibold pt-4 pl-8">At <b>maha akshaya sivam trust</b>,we draw profound <br>
+            inspiration from the teachings of revered spiritual <br>
+            leaders such as kanchi maha periva, <br>
+            ramsuratkumar,and gnananda swamigal.these <br>
+            guided lights,along with sacred scriptures and <br>
+            eminent personalities,inspire our mission to provide <br>
+            food,education and medical facilities to those in <br>
+            need.these key themes embody the essence of <br>
+            compassion,wisdom,and selfless services that form <br>
+            the core of our organization's philosophy.</p>
+          </div>
+            <div class="image pt-8">
+                <img src="../static/assets/Croods The Feedback.png" alt="">
+            </div>
+          </div>
+        <h1 class="pt-4">__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</h1>
+    </div>
+    <div class="flex pt-20">
+      <div class="key">
+        <img class="px-60 pt-12" src="../static/assets/Sketch-annotation-element-stroke-abstract-highlight-bling-line-1.png" alt="sketch">
+        <h1 class="font-bold text-6xl px-8">our key <br /> themes</h1>
+      </div>
+    <div class="content">
+        <h1 class="font-bold text-3xl"><img src="C:/Users/Shalini Mariappan/Downloads/images (2).jpg" width="5%" height="3%" alt="">Food - Nourishing Bodies, Nurturing Souls</h1>
+        <h3 class="font-semibold text-2xl py-2">“Feeding the Hungry, Touching Hearts”</h3>
+        <h7  class="font-semibold text-xl">In the spirit of compassion and humanity, we recognize the profound teachings of Kanchi Maha Periva,who emphasized the importance of serving others as a means of serving the divine. Our Food initiative reflects the essence of selfless service, where we provide nutritious meals to the hungry, mirroring the compassion of spiritual luminaries like Yogi Ramsuratkumar,whose life is going.</h7>
+        <h1 class="font-bold text-3xl pt-5"><img src="C:/Users/Shalini Mariappan/Downloads/images.png" width="7%" alt="">Education - Illuminating Minds, Igniting Dreams</h1>
+        <h3 class="font-semibold text-2xl py-2"> “Empowering Minds, Creating Opportunities”</h3>
+        <h7 class="font-semibold text-xl">The teachings of Gnanananda Swamigal echo in our Education initiative, emphasizing the significance of knowledge and wisdom. In line with the teachings of Ramayana and Mahabharata, "Knowledge is the greatest wealth one can possess." Our Education initiative embodies the wisdom of ancient scriptures, as well as the vision of Vivekananda, who emphasized the importance of education for holistic development. Through scholarships and mentorship programs, we empower underprivileged individuals with the gift of knowledge, igniting their dreams and kindling the flame of wisdom within.</h7>
+        <h1 class="font-bold text-3xl pt-5"> <img src="C:/Users/Shalini Mariappan/Downloads/download (3).jpg" width="5%" alt="">Medical Facilities - Healing Hearts, Renewing Hope</h1>
+        <h3 class="font-semibold text-2xl py-2"> “Extending Care, Enhancing Lives”</h3>
+        <h7 class="font-semibold text-xl">Drawing inspiration from the compassionate guidance of Sri Sivan Saar, who served as a guiding light to many, we approach our Medical Facilities initiative with a spirit of humility and empathy. Sri Sivan Saar instructed and inspired numerous people on how to serve others with compassion and love. Embracing the teachings of Bhagavad Gita and Vivekananda's emphasis on selfless service, we aim to bridge the gap between healthcare and the underprivileged. By offering accessible medical care, we renew hope and alleviate suffering, making a tangible difference in their lives.</h7>
+      </div>
+    </div>
+    <div class="together">
+        <h1>Together, We Create <span>Lasting Impact</span></h1>
+        <p>At Maha Akshaya Sivam Trust, our key themes of Food, Education, and Medical Facilities are not just isolated initiatives; they represent the essence of our commitment to empowering lives holistically. Embracing the teachings of spiritual leaders and the wisdom of sacred texts, we strive to create a world where compassion, knowledge, and healing are accessible to all.</p>
+        <img src="C:/Users/Shalini Mariappan/Pictures/Frame 37933.png" alt="">
+        <h1>Providing Affordable and Free Services:</h1>
+        <h2><span>“Illuminating Lives with Compassion”</span></h2>
+        <p>At Maha Akshaya Sivam Trust, our unwavering commitment lies in ensuring that no one is deprived of basic necessities, including food, education, and medical facilities, due to financial constraints. Embodying the teachings of compassion and selfless service, we have meticulously designed a range of affordable and free services to reach out to those in need, fostering an environment of inclusivity and dignity for all.</p>
+    </div>
+    <div class="containers">
+        <div class="images">
+            <img src="C:/Users/Shalini Mariappan/Pictures/Frame 37939.png" alt="" >
+        </div>
+        <div class="text">
+            <h2>Affordable Food Services: 
+            Nourishing Bodies, Uplifting Spirits</h2>
+            <p>In the spirit of serving humanity, our Food Services initiative endeavors to provide affordable, hygienic, and nutritious meals to those facing economic hardships. Through partnerships with local communities, food distribution centers, and generous donors, we ensure that the hungry are fed with dignity and love. We strive to keep the costs minimal, ensuring that access to nutritious food becomes a reality for those who need it the most.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="text">
+            <h2>Education Sponsorships: 
+            Empowering Minds, Igniting Dreams 
+            Spirits</h2>
+            <p>Our Education Sponsorship program seeks to empower underprivileged children and adults with access to quality education. We provide scholarships, learning resources, and mentorship opportunities, ensuring that financial constraints do not hinder the pursuit of knowledge. By nurturing young minds and offering a ladder of opportunity, we envision a future where education paves the way for a brighter tomorrow.</p>
+        </div>
+        <div class="image">
+            <img src="C:/Users/Shalini Mariappan/Downloads/unsplash_g32g_IBprFA.png" alt="">
+        </div>
+    </div>
+    <div class="container">
+        <div class="text">
+            <h2>Free Medical Facilities: 
+                Healing Hearts, Easing Burdens</h2>
+            <p>line with the compassionate teachings of our guiding spiritual leaders, we believe that quality healthcare is a fundamental right for all. Through our Free Medical Facilities initiative, we organize charitable medical camps, partner with healthcare providers, and collaborate with generous medical professionals to offer essential healthcare services at no cost to the underprivileged. We strive to alleviate the burden of medical expenses, providing hope and healing to those who require it the most.</p>
+        </div>
+        <div class="image">
+            <img src="C:/Users/Shalini Mariappan/Downloads/unsplash_g32g_IBprFA (1).png" alt="">
+        </div>
+    </div>
+    <div class="containers">
+        <div class="images">
+            <img src="C:/Users/Shalini Mariappan/Downloads/unsplash_g32g_IBprFA (2).png" alt="">
+        </div>
+        <div class="text">
+            <h2>Affordable Food Services: 
+            Nourishing Bodies, Uplifting Spirits</h2>
+            <p>In the spirit of serving humanity, our Food Services initiative endeavors to provide affordable, hygienic, and nutritious meals to those facing economic hardships. Through partnerships with local communities, food distribution centers, and generous donors, we ensure that the hungry are fed with dignity and love. We strive to keep the costs minimal, ensuring that access to nutritious food becomes a reality for those who need it the most.</p>
+        </div>
+    </div>
+    <div class="together">
+        <h2>Together, We Illuminate Lives with<span>Love and Service</span></h2>
+        <p>At Maha Akshaya Sivam Trust, our affordable and free services are not just initiatives; they are a testament to our belief in the power of compassion and unity. Inspired by the teachings of spiritual leaders and the wisdom of sacred scriptures, we strive to make a positive impact on the lives of those facing adversity.</p>
+        <p>Join us in our journey to empower lives through nourishment, knowledge, and healing, embodying the teachings of great souls like Kanchi Maha Periva, Yogi Ramsuratkumar, and Gnanananda Swamigal. Together, we can create lasting impact and pave the way for a brighter future for all.</p>
+        <a href="#" class="btns"><b>donate now</b></a>
+        <a href="#" class="btne"><b>volunteer with us</b></a>          
+    </div>
+        <div class="texts">
+            <h1>__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</h1>
+        </div>
+    <div class="fservice">
+        <div class="flagship">
+        <h4>FLAGSHIP SERVICES__________</h4>
+        <h1>A Dignified Farewell: Cremation of Unclaimed Bodies</h1>
+        <h3>“Embracing Souls, Fulfilling Sacred Duties”</h3>
+        <p>In the sacred scriptures and the wisdom of spiritual luminaries, the act of cremating unclaimed bodies is considered profoundly significant. As inspired by the revered Kanchi Maha Periva's teachings in the book "Deivathin Kural," we hold the belief that this act is akin to performing an Ashwamedha Yaga, a noble and virtuous sacrificial ritual of ancient times.</p>
+        </div>
+    <div class="image">
+        <img src="C:/Users/Shalini Mariappan/Downloads/unsplash_g32g_IBprFA (2).png" alt="">
+    </div>
+    </div>
+    <div class="para">
+        <h1>Cremation - A Sacred Duty</h1>
+        <p>In Deivathin Kural, Maha Periva highlights the immense spiritual value of performing the last rites for unclaimed souls. He emphasizes that this selfless act is not merely an act of kindness towards the deceased, but a profound expression of our humanity and sacred duty towards all beings. Embodying the teachings of Bhagavad Gita, we undertake this service without expecting anything in return, acknowledging that true selfless service brings immeasurable blessings and fulfillment.</p>
+        <h1><i class="fa-solid fa-file-lines"></i>  Identification and Documentation:</h1>
+        <p>Upon receiving notification of an unclaimed body, our organization verifies the identity of the deceased individual through available documents or records, collaborating with local authorities to ensure compliance with legal requirements. Our commitment to accuracy is essential as we strive to provide dignified last rites to those with no one to claim them.</p>
+        <h1><i class="fa-solid fa-angles-right"></i>Respectful Transfer:</h1>
+        <p>With a deep sense of reverence, our team ensures the dignified transfer of unclaimed bodies to our facilities. Throughout the process, the deceased is treated with the utmost dignity they deserve. We follow established protocols and are attentive to cultural or religious considerations.</p>
+        <h1><i class="fa-solid fa-walkie-talkie"></i>Communication with Authorities:</h1>
+        <p>Maintaining open communication with relevant authorities is paramount to our mission. From the moment we receive an unclaimed body, we keep the authorities informed about our procedures and progress. This collaborative approach ensures that we adhere to regulations while providing compassionate services.</p>
+        <div class="get">
+            <h4>GET INVOLVED_________</h4>
+            <p>We believe that together, we can create a stronger, more caring community. In this section, explore ways you can get involved with Yugaas Tech. Whether through volunteering, making donations, or spreading awareness about our mission, your support can make a real difference in the lives of those we serve. Join us in our journey of compassion and transformation.</p>
+        <div class="you">
+           <h1>You can contribute to provide a place for children with special needs!</h1>
+           <a href="#" class="btno"><b>Join as a volunteer</b></a>     <a href="#" class="btnn">donate</a>
+        </div> 
+        </div>
+        </div>
+        <div class="top">
+            <h3>back to top<i class="fa-solid fa-arrow-up"></i></h3>
+        </div>
+<section class="footer">
+    <div class="box-container">
+        <div class="home">
+            <h3>home</h3>
+                <a href="#" class="links">about us</a>
+                <a href="#" class="links">our services</a>
+                <a href="#" class="links">get involved</a>
+                <a href="#" class="links">causes</a>
+        </div>
+        <div class="more">
+            <h3>more</h3>
+                <a href="#" class="links">FAQ's</a>
+                <a href="#" class="links">contact us</a>
+                <a href="#" class="links">donate</a>
+                <a href="#" class="links">blog</a>
+        </div>
+        <div class="connect">
+            <h3>connect</h3>
+                <a href="#" class="links">facebook</a>
+                <a href="#" class="links">instagram</a>
+                <a href="#" class="links">twitter</a>
+                <a href="#" class="links">linkedin</a>
+        </div>
+        <div class="sub">
+            <h1>subscribe to get latest updates</h1>
+            <div class="payment">
+                <form action="">
+               <input type="email" placeholder="your email" class="email"><input type="submit" value="subscribe" class="btnne">
+               <button>subscribe</button>
+               </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
