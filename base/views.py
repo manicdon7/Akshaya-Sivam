@@ -3,9 +3,11 @@ from .models import UserInput
 
 # Create your views here.
 def home(request):
-    return render(request,'index.html')
+    items = UserInput.objects.all()
+    return render(request,'index.html',{'items': items})
 def base(request):
-    return render(request,'base.html')
+    items = UserInput.objects.all()
+    return render(request,'base.html',{'items': items})
 def aboutus(request):
     return render(request,'aboutus.html')
 def aboutus1(request): 
