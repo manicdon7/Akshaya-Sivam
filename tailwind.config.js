@@ -55,7 +55,7 @@ module.exports = {
         "4xs": "9px",
         "8xs": "5px",
         "12xs": "1px",
-        xl: "20px",
+        "xl": "20px",
         "3xs": "10px",
       },
     },
