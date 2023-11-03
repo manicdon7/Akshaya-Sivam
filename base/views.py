@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import UserInput
 
 # Create your views here.
@@ -30,7 +30,7 @@ def login(request):
     return render(request,'login.html')
 def causes(request):
     items = UserInput.objects.all()
-    return render ( request , "causes.html",{'items': items})
+    return render(request,'causes.html',{'items': items})
 def Getinvolved(request):
     return render(request,'Get_invloved.html')  
 def volunteer(request):
@@ -61,6 +61,6 @@ def save_input(request):
             goal=goal
         )
 
-        return redirect('input_form')
+        return redirect('test.html')
 
     return render(request, 'test.html')
