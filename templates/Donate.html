@@ -1,214 +1,239 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"/>
-    <title>DonateUs</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" />
+  <title>DonateUs</title>
 </head>
+
 <body>
-    <style>
-        /* body{
+  <style>
+    * {
+      over
+    }
+
+    /* body{
           overflow-x: hidden;
       
       margin: 0;
       padding: 0;
         } */
-        .bg-cover {
-      background-size: cover; /* or background-size: contain; */
+    .bg-cover {
+      background-size: cover;
+      /* or background-size: contain; */
     }
-    
-      /* Mobile Styles */
-      @media (max-width: 1572px) {
-        /* Mobile-specific styles */
-        header {
-          background-color: rgba(14, 14, 14, 1);
-          padding: 10px;
-        }
-        /* Add more mobile styles as needed */
+
+    /* Mobile Styles */
+    @media (max-width: 1572px) {
+
+      /* Mobile-specific styles */
+      header {
+        background-color: rgba(14, 14, 14, 1);
+        padding: 10px;
       }
-    
-      /* Tablet and Desktop Styles */
-      @media (min-width: 1200px) {
-        /* Tablet and desktop-specific styles */
-        header {
-          background-color: rgba(14, 14, 14, 1);
-          padding: 20px;
-        }
-        /* Add more tablet and desktop styles as needed */
+
+      /* Add more mobile styles as needed */
+    }
+
+    /* Tablet and Desktop Styles */
+    @media (min-width: 1200px) {
+
+      /* Tablet and desktop-specific styles */
+      header {
+        background-color: rgba(14, 14, 14, 1);
+        padding: 20px;
       }
-      </style>
-    </head>
-    <body class="overflow-x-hidden">
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script>
-        AOS.init();
-      </script>
-      <style>
-         /* Default styles for larger screens */
-         .nav-container {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: rgba(14, 14, 14, 1);
-          padding: 6px 12px;
-        }
-    
-        /* Dropdown styles */
-        .dropdown {
-          position: relative;
-          display: inline-block;
-        }
-    
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: rgba(14, 14, 14, 1);
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
-        }
-    
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
-    
-        .dropdown-content a {
-          color: white;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-        }
-    
-        .dropdown-content a:hover {
-          background-color: black;
-          color: black;
-        }
-    
-        /* Mobile menu styles */
-        .mobile-menu {
-          display: none;
-          flex-direction: column;
-          background-color: rgba(14, 14, 14, 1);
-          padding: 10px;
-        }
-    
-        .show-mobile-menu {
-          display: flex; /* Show the mobile menu when the class is applied */
-        }
-    
-        /* Close button styles */
-        .close-button {
-          align-self: flex-end;
-          cursor: pointer;
-          color: white;
-          margin-right: 10px;
-        }
-    
-        /* Mobile dropdown styles */
-        
-    
-        /* Default styles for larger screens */
+
+      /* Add more tablet and desktop styles as needed */
+    }
+  </style>
+  </head>
+
+  <body class="overflow-x-hidden">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <style>
+      /* Default styles for larger screens */
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(14, 14, 14, 1);
+        padding: 6px 12px;
+      }
+
+      /* Dropdown styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(14, 14, 14, 1);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: black;
+        color: black;
+      }
+
+      /* Mobile menu styles */
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(14, 14, 14, 1);
+        padding: 10px;
+      }
+
+      .show-mobile-menu {
+        display: flex;
+        /* Show the mobile menu when the class is applied */
+      }
+
+      /* Close button styles */
+      .close-button {
+        align-self: flex-end;
+        cursor: pointer;
+        color: white;
+        margin-right: 10px;
+      }
+
+      /* Mobile dropdown styles */
+
+
+      /* Default styles for larger screens */
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(14, 14, 14, 1);
+        padding: 6px 12px;
+      }
+
+      .donate-button {
+        background: rgba(242, 201, 76, 1);
+        border-radius: 5%;
+      }
+
+      /* Mobile menu icon styles */
+      .mobile-menu-icon {
+        display: none;
+        /* Initially hide the icon on larger screens */
+        cursor: pointer;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-menu {
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav-menu a {
+        margin-right: 15px;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-menu a:hover {
+        color: #F2C94C;
+      }
+
+      /* Mobile menu styles */
+      .mobile-menu {
+        display: none;
+        flex-direction: row;
+        background-color: rgba(14, 14, 14, 1);
+        padding: 10px;
+      }
+
+      .show-mobile-menu {
+        display: block;
+        /* Show the menu when the class is applied */
+      }
+
+      /* Close button styles */
+      .close-button {
+        align-self: flex-end;
+        cursor: pointer;
+        color: white;
+        margin-right: 10px;
+      }
+
+      @media screen and (max-width: 1200px) {
+
+        /* Styles for small screens */
         .nav-container {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: rgba(14, 14, 14, 1);
-          padding: 6px 12px;
-        }
-    
-        .donate-button{
-          background: rgba(242, 201, 76, 1);
-          border-radius: 5%;
-        }
-        /* Mobile menu icon styles */
-        .mobile-menu-icon {
-          display: none; /* Initially hide the icon on larger screens */
-          cursor: pointer;
-        }
-    
-        .nav-logo {
-          display: flex;
-          align-items: center;
-        }
-    
-        .nav-menu {
-          display: flex;
-          justify-content: center;
-        }
-    
-        .nav-menu a {
-          margin-right: 15px;
-          color: white;
-          text-decoration: none;
-        }
-    
-        .nav-menu a:hover {
-          color: #F2C94C;
-        }
-    
-        /* Mobile menu styles */
-        .mobile-menu {
-          display: none;
           flex-direction: row;
-          background-color: rgba(14, 14, 14, 1);
-          padding: 10px;
+          align-items: center;
         }
-    
-        .show-mobile-menu {
-          display: block; /* Show the menu when the class is applied */
+
+        .mobile-menu-icon {
+          display: block;
+          /* Show the menu icon on small screens */
         }
-    
-        /* Close button styles */
-        .close-button {
-          align-self: flex-end;
-          cursor: pointer;
-          color: white;
-          margin-right: 10px;
-        }
-    
-        @media screen and (max-width: 1200px) {
-          /* Styles for small screens */
-          .nav-container {
-            flex-direction: row;
-            align-items: center;
-          }
-    
-          .mobile-menu-icon {
-            display: block; /* Show the menu icon on small screens */ 
-          }
-          .nav-menu{
-            display: none;
-          }
-    
-          .donate-button {
-            display: none;
-          }
-        }
-        .mobile-dropdown {
+
+        .nav-menu {
           display: none;
         }
-    
-        .mobile-dropdown a {
-          color: white;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
+
+        .donate-button {
+          display: none;
         }
-    
-        .mobile-dropdown a:hover {
-          background-color: #F2C94C;
-          color: black;
-        }
-    
-        .show-mobile-menu .mobile-dropdown {
-          display: block;
-        }
-      </style>
-    
+      }
+
+      .mobile-dropdown {
+        display: none;
+      }
+
+      .mobile-dropdown a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .mobile-dropdown a:hover {
+        background-color: #F2C94C;
+        color: black;
+      }
+
+      .show-mobile-menu .mobile-dropdown {
+        display: block;
+      }
+
+      * {
+        overflow-x: hidden;
+      }
+    </style>
+
     </head>
+
     <body class="overflow-x-hidden">
       <div class="nav-container">
         <div class="nav-logo">
@@ -218,7 +243,13 @@
           <h2 class="ml-1 text-white">SivaAkshayamTrust</h2>
         </div>
         <button class="mobile-menu-icon" id="mobile-menu-icon">
-          <svg height="30" id="IconChangeColor" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="30" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z" id="mainIconPathAttribute" fill="#ffffff"></path></svg>
+          <svg height="30" id="IconChangeColor" style="enable-background:new 0 0 32 32;" version="1.1"
+            viewBox="0 0 32 32" width="30" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path
+              d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z"
+              id="mainIconPathAttribute" fill="#ffffff"></path>
+          </svg>
         </button>
         <div class="nav-menu text-sm">
           <a href="base" class="ml-2">Home</a>
@@ -242,7 +273,7 @@
               <a href="impact">Impact</a>
             </div>
           </div>
-          <a href="Causes" class="ml-2">Causes</a> 
+          <a href="Causes" class="ml-2">Causes</a>
           <a href="faq" class="ml-2">FAQ's</a>
           <a href="contactus" class="ml-2">ContactUs</a>
         </div>
@@ -250,7 +281,7 @@
           <a href="Donate"><button class="h-12 w-40 text-black font-bold hover:text-white">Donate Now</button></a>
         </div>
       </div>
-    
+
       <!-- Mobile Menu -->
       <div class="mobile-menu" id="mobile-menu">
         <button class="close-button" onclick="closeMobileMenu()">
@@ -274,42 +305,72 @@
             <a href="foster" class="ml-4">Fostering Collective Impact</a>
             <a href="impact" class="ml-4">Fostering Collective Impact</a>
           </div>
-          <a href="Causes" class="ml-1 block">Causes</a> 
+          <a href="Causes" class="ml-1 block">Causes</a>
           <a href="faq" class="ml-1 block">FAQ's</a>
           <a href="contactus" class="ml-1 block">ContactUs</a>
         </div>
       </div>
-      
+
       <script>
-         // JavaScript to toggle the mobile menu when the icon is clicked
-         const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-         const mobileMenu = document.getElementById('mobile-menu');
-     
-         mobileMenuIcon.addEventListener('click', () => {
-           mobileMenu.classList.toggle('show-mobile-menu');
-         });
-     
-         // JavaScript to close the mobile menu when the close button is clicked
-         function closeMobileMenu() {
-           mobileMenu.classList.remove('show-mobile-menu');
-         }
+        // JavaScript to toggle the mobile menu when the icon is clicked
+        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuIcon.addEventListener('click', () => {
+          mobileMenu.classList.toggle('show-mobile-menu');
+        });
+
+        // JavaScript to close the mobile menu when the close button is clicked
+        function closeMobileMenu() {
+          mobileMenu.classList.remove('show-mobile-menu');
+        }
       </script>
-      
-        
-          <!-- <div class="font-bold  ml-4 h-96 mr-8  " style="background-image: url(static/assets/donate_design.png);border-radius:0  20px 20px 0;">
+
+
+      <!-- <div class="font-bold  ml-4 h-96 mr-8  " style="background-image: url(static/assets/donate_design.png);border-radius:0  20px 20px 0;">
             <h2 class=" pt-32 text-5xl text-center text-black">Donate for poor peoples
               treatment and medicine</h2>
             </div> -->
-       
-            <div class="bg-cover h-96 pt-4" style="background-image: url(/static/assets/donate_design.png);">
-              <!-- <img class="bg-fixed" src="static/assets/children.png" alt="children"> -->
-              <h1 class="text-black pl-28 pt-28 text-7xl " style="margin-top:-5%;">
-                Donate for poor peoples <br>
-treatment and medicine
-              </h1>
-              </div>
-              <div style="margin: 4%;"><h1 class=" font-bold text-4xl pt-7 pl-96">Donating Poor People.</h1>
-<img src="/static/assets/Group_37890.png" alt="" style="background-size: cover; background-repeat: no-repeat;width: 90%;margin-left: 5%;margin-top: 4%;">              </div>
 
-</body>
+      <div class="bg-cover md:h-96 pt-4" style="background-image: url(/static/assets/donate_design.png);">
+        <!-- <img class="bg-fixed" src="static/assets/children.png" alt="children"> -->
+        <h1 class="text-black text-2xl  -mt-24 mb-8 pr-16  text-center -mr-20  md:text-7xl pt-32    ">
+          Donate for poor peoples <br>
+          treatment and medicine
+        </h1>
+      </div>
+      <div style="margin: 4%;">
+        <h1 class=" font-bold text-center  md:text-4xl  " style="height: 50px;">Donating Poor People.</h1>
+        <div style="width: 90%;margin-left:6%;margin-top: 8%;">
+          <img class="md:h-96  rounded-lg " src="/static/assets/Group_37890.png" alt=""  style="background-size: cover; background-repeat: no-repeat;width: 90%;margin-left: 4%;">
+          <h1 class=" font-bold text-left mt-12 md:text-4xl   " style="height: 84px;">Donate for poor peoples treatment and medicine.</h1>
+          <div>
+            <p class="font-semilight text-lg md:text-xl -mt-2 md:pt-4 px-5 md:pl-12">Flyingfish Kafue pike cow shark California smoothtongue golden loach temperate ocean-bass gulper
+              Sailbearer kanyu porcupinefish Kafue pike opah sunfish gudgeon boga Asiatic glassfish tadpole fish!
+              Alewife, poacher airbreathing catfish; zebra tilapia northern pearleye naked-back knifefish pupfish
+              dojo loach, “snake mackerel bonytail chub arapaima horsefish weasel shark.”</p>
+            <br><br><p class="font-semilight text-lg md:text-xl -mt-2 md:pt-4 px-5 md:pl-12">Asian carps sailback scorpionfish; dragon goby lemon sole triplefin blenny hog sucker. Smelt sleeper
+              shovelnose sturgeon merluccid hake cow shark herring smelt trout-perch barbeled houndshark.
+              Shell-ear Asian carps blackfish Port Jackson shark Atlantic saury. Sacramento blackfish pricklefish,
+              Atlantic cod, “driftwood catfish chimaera ribbonfish, marblefish worm eel smelt mora gray
+              reef shark scabbard fish.”</p>
+              <img class="md:h-96  rounded-lg mt-8" src="/static/assets/donate2.png" alt=""  style="background-size: cover; background-repeat: no-repeat;width: 90%;margin-left: 4%;">
+              <h1 class=" font-bold text-left mt-12 md:text-4xl   " style="height: 84px;">Challenge</h1>
+              <p class="font-semilight text-lg md:text-xl -mt-2 md:pt-4 px-5 md:pl-12">Best quality only happens when you care enough to do your best. Steer companies away from risky
+                denounce with righteous indignation who are so beguiled and demoralized by pleasure of the</p>
+              <br><br><p class="font-semilight text-lg md:text-xl -mt-2 md:pt-4 px-5 md:pl-12">Flyingfish Kafue pike cow shark California smoothtongue golden loach temperate ocean-bass gulper
+                kanyu porcupinefish Kafue pike opah sunfish gudgeon boga Asiatic glassfish tadpole fish! Alewife
+                airbreathing catfish; zebra tilapia northern pearleye naked-back knifefish pupfish dojo loach.
+                mackerel bonytail chub arapaima horsefish weasel shark.”</p>
+              <br><br><p class="font-semilight text-lg md:text-xl -mt-2 md:pt-4 px-5 md:pl-12">Asian carps sailback scorpionfish; dragon goby lemon sole triplefin blenny hog sucker. Smelt sleeper
+                sturgeon merluccid hake cow shark herring smelt trout-perch barbeled houndshark. Shell-ear Asian
+                blackfish Port Jackson shark Atlantic saury. Sacramento blackfish pricklefish, Atlantic cod, “driftwood
+                catfish chimaera ribbonfish, marblefish worm eel smelt mora gray reef shark scabbard fish.”</p>
+
+        </div> 
+        </div>
+      </div>
+
+    </body>
+
 </html>
