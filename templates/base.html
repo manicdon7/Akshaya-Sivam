@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HOME</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"/>
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
@@ -304,18 +305,18 @@
             <div>
               {% block content %}
               <main class="">
-                <div  class="bg-cover pt-4 xl:w-full mlg:w-full lg:w-full md:w-full sm:w-full" style="background-image: url(/static/assets/children1.png);">
-                  <h1 class="text-white text-center pr-16 -m-4 text-2xl md:text-7xl mlg:pl-28 pl-28 md:pl-28 sm:pl-10 ss:pl-10 xs:pl-10 pt-28 font-bold">
+                <div  class="bg-cover pt-4 md:w-full" style="background-image: url(/static/assets/children1.png);">
+                  <h1 class="text-white text-2xl md:text-7xl pl-5 md:pl-28 pt-28 font-bold">
                     Helping Each Other <br>
                     Can Make World Better
                   </h1>
-                  <h2 class="text-white text-center lg:pl-28 md:pl-28 sm:pl-10 ss:pl-10 xs:pl-10 pt-10">We Seek out world changers and difference makers around the <br>  
+                  <h2 class="text-white text-lg pt-2 pl-5 md:pl-28 md:pt-10">We Seek out world changers and difference makers around the <br>  
                     globe,and equip them to fulfill their unique purpose.</h2>
-                    <div class="mt-7  text-center mlg:flex lg:flex md:flex sm:flex ss:block xs:block text-black">
-                      <div class="">
+                    <div class="mt-7 grid md:grid-cols-2 grid-cols-1 text-black">
+                      <div class="md:pl-28">
                         <a href="Donate"><button class="h-12 w-40 bg-yellow-300 hover:bg-black font-bold rounded-md text-black border hover:border-yellow-300 hover:text-white" style="background-color: rgba(242, 201, 76, 1);">Donate Now</button></a>
                       </div>
-                      <div class=" mlg:pl-10 lg:pl-10 md:pl-10 sm:pl-10 ss:pl-10 xs:pl-10 mlg:pt-0 ss:pt-10 text-white font-bold rounded-md border-yellow-300">
+                      <div class="lg:pl-10 md:pl-10 text-white font-bold rounded-md border-yellow-300">
                         <a href="aboutus1"><button class="h-12 w-40 text-white  font-bold rounded-md border hover:border-yellow-300">Know About Us</button></a>
                       </div>
                     </div>
@@ -430,7 +431,7 @@
                             provide accessible medical support without any financial barriers, offering <br>
                             essential healthcare services to improve the well-being and resilience of our <br>
                             community.</p>
-                         
+                            
                   </div>
                 </div>
                           <div>
@@ -446,11 +447,12 @@
                     <h1 class="">Find the popular cause <br>
                       and donate them</h1>
                   </div>
-                  <div class="xl:flex pl-16 grid mlg:grid-cols-4 gap-12 lg:grid-cols-3 lg:gap-12 md:grid-cols-3 md:gap-10 sm:grid-cols-2 sm:gap-8 md:pl-10" style="margin-left: 1%;">
-                    {% for item in items %}
-          <div class="pt-3">
+                  <div class="carousel">
+                    <div class="xl:flex pl-16 grid mlg:grid-cols-4 gap-12 lg:grid-cols-3 lg:gap-12 md:grid-cols-3 md:gap-10 sm:grid-cols-2 sm:gap-8 md:pl-10" style="margin-left: 1%;">
+                      {% for item in items %}
+                      <div class="pt-3">
               <div class="shadow-lg w-80" data-aos="flip-left">
-                  <div class="pl-7 pt-10" style="padding-left: 2.2rem;">
+                  <div class="pl-7 pt-10">
                       <img style="background-size: cover;" src="{{ item.image.url }}" alt="donation-image">
                   </div>
                   <div class="pl-14 pt-4 font-bold text-yellow-300">
@@ -476,21 +478,21 @@
                       </div>
                   </div> {% endcomment %}
                   <div class="flex">
-                      {% comment %} <div class="pl-14 pt-4">
-                          <h2>Raised: Rs {{ item.raised }}</h2>
+                    {% comment %} <div class="pl-14 pt-4">
+                      <h2>Raised: Rs {{ item.raised }}</h2>
                       </div> {% endcomment %}
                       <div class="pl-16 pt-4">
                           <h1>Goal: Rs {{ item.goal }}</h1>
                       </div>
-                  </div>
-                  <div class="pl-14 pt-2 pb-4">
+                    </div>
+                    <div class="pl-14 pt-2 pb-4">
                       <button class="bg-white border-yellow-300 text-yellow-300 hover-bg-yellow-300 hover-text-white w-28 rounded-md text-lge">Donate</button>
+                    </div>
                   </div>
+                </div>
+                {% endfor %}
               </div>
-          </div>
-          {% endfor %}
-                  
-      </div>
+            </div>
               <div data-aos="fade-right" class="text-red-500 font-bold pl-28 pt-10">
                 <h1>TO BE GIVEN _______________</h1>
               </div>

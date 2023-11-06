@@ -301,34 +301,34 @@
     
 <div class="causes-box">
 <section class="causes" id="causes">
-    <div class="pl-20 pt-10 space-x-3 font-semibold flex" data-aos="fade-right">
+    <div class="md:pl-20 md:pt-10 px-5 pt-10 space-x-3 font-semibold flex" data-aos="fade-right">
         <h1 class="">LATEST CAUSES</h1>
         <h1 class="underline w-8">_______________</h1>
       </div>
-      <div class="font-bold text-5xl pl-20 pt-10 " data-aos="fade-up">
+      <div class="font-bold text-2xl md:text-5xl px-5 pt-5 md:pl-20 md:pt-10 " data-aos="fade-up">
         <h1 class="">Find the popular cause <br>
           and donate them</h1>
       </div>
-    <div class="swiper causes-slider">
-        <div class="swiper-wrapper">
-            <div class="xl:flex pl-16 grid mlg:grid-cols-4 gap-12 lg:grid-cols-3 lg:gap-12 md:grid-cols-3 md:gap-10 sm:grid-cols-2 sm:gap-8 md:pl-10" style="margin-left: 1%;">
+    <div class="">
+        <div class="">
+            <div class="grid md:grid-cols-4 grid-cols-1 px-5 pt-5 md:gap-8 md:pl-10" style="margin-left: 1%;">
               {% for item in items %}
     <div class="pt-3">
-        <div class="shadow-lg w-80" data-aos="flip-left">
-            <div class="pl-7 pt-10" style="padding-left: 2.2rem;">
+        <div class="shadow-2xl w-80" data-aos="flip-left">
+            <div class="px-5 pt-10">
                 <img style="background-size: cover;" src="{{ item.image.url }}" alt="donation-image">
             </div>
-            <div class="pl-14 pt-4 font-bold text-yellow-300">
+            <div class="px-5 pt-4 font-bold text-yellow-300">
                 <h1>{{ item.name }}</h1>
             </div>
-            <div class="pl-14 pt-3 font-bold text-lg">
+            <div class="px-5 pt-3 font-bold text-lg">
                 <h2>{{ item.title }}</h2>
             </div>
-            <div class="pl-14 pt-3">
+            <div class="px-5 pt-3">
                 <p>{{ item.description }}</p>
             </div>
             <div class="flex">
-                <div class="pl-14 pt-4 font-bold">
+                <div class="px-5 pt-4 font-bold">
                     <h2>Donate</h2>
                 </div>
                 {% comment %} <div class="pl-48 pt-4">
@@ -344,12 +344,12 @@
                 {% comment %} <div class="pl-14 pt-4">
                     <h2>Raised: Rs {{ item.raised }}</h2>
                 </div> {% endcomment %}
-                <div class="pl-16 pt-4">
+                <div class="pl-5 pt-4">
                     <h1>Goal: Rs {{ item.goal }}</h1>
                 </div>
             </div>
-            <div class="pl-14 pt-2 pb-4">
-                <button class="bg-white border-yellow-300 text-yellow-300 hover-bg-yellow-300 hover-text-white w-28 rounded-md text-lge">Donate</button>
+            <div class="flex justify-center md:justify-start md:pl-5 pt-2 pb-4">
+              <button class="bg-white border-2 border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-white px-3 rounded-md text-lg" onclick="showQRCode()">Donate</button>
             </div>
         </div>
     </div>
@@ -358,96 +358,146 @@
 </div>
 </div>
 </div>
+<div class="overlay hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div class="popup-content bg-white p-6 max-w-screen-md text-center relative">
+    <!-- Place the content you want to display in the pop-up here -->
+    <div>
+      <h1 id="trustName"></h1>
+      <h2 id="trustTitle"></h2>
+      <p id="trustDescription"></p>
+    </div>
+    <img id="qrcode" class="mx-10 my-10" src="" alt="QR Code">
+    <!-- Cross SVG icon for closing the pop-up -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="absolute top-3 right-3 cursor-pointer text-black w-6 h-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      onclick="closePopup()"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"
+      />
+    </svg>
+  </div>
+</div>
+
+<script>
+  
+  function showQRCode() {
+    // Set the QR code image source (replace with the actual image path)
+    const qrCodeImagePath = "../static/assets/ASK.png";
+    document.getElementById("qrcode").src = qrCodeImagePath;
+  
+    // Show the overlay and pop-up
+    const overlay = document.querySelector(".overlay");
+    overlay.classList.remove("hidden");
+  }
+  
+  function closePopup() {
+    // Hide the overlay and pop-up
+    const overlay = document.querySelector(".overlay");
+    overlay.classList.add("hidden");
+  }
+  
+  
 </script>
-<footer class="overflow-x-hidden pt-20">
-    <div class="font-extrabold text-center bg-yellow-400 h-16">
-      <h1 class="pt-6 cursor-pointer">Back to top</h1>
-    </div>
-    <div class="xl:flex mlg:flex lg:block md:block sm:block xl:pl-20 mlg:pl-20 lg:pl-10 md:pl-10 sm:pl-10 ss:pl-10 xs:pl-10 bg-black text-white pb-20">
-      <div class="flex xl:pl-20 mlg:pl-20 lg:pl-10 md:pl-10 sm:pl-7 xl:text-sm mlg:text-sm lg:text-sm md:text-sm sm:text-sm xs:text-xs ss:text-xs">
-        <div>
-        <div class="pt-28 font-bold">
-        <a class="xl:pl-60 mlg:pl-40 lg:pl-40 md:pl-20 sm:pl-16 ss:pl-20 xs:pl-20" href="">Home</a>
-      </div>
-      <div class="pt-5">
-        <a class="xl:pl-60 mlg:pl-40 lg:pl-40 md:pl-20 sm:pl-16 ss:pl-20 xs:pl-20" href="">AboutUS</a>
-      </div>
-      <div class="pt-5">
-        <a class="xl:pl-60 mlg:pl-40 lg:pl-40 md:pl-20 sm:pl-16 ss:pl-20 xs:pl-20" href="">Ourservices</a>
-      </div>
-      <div class="pt-5">
-        <a class="xl:pl-60 mlg:pl-40 lg:pl-40 md:pl-20 sm:pl-16 ss:pl-20 xs:pl-20" href="">Getinvolved</a>
-      </div>
-      <div class="pt-5">
-        <a class="xl:pl-60 mlg:pl-40 lg:pl-40 md:pl-20 sm:pl-16 ss:pl-20 xs:pl-20" href="">Causes</a>
-      </div>
-    </div>
+
+</script>
+<footer class="pt-16">
+  <div class="font-extrabold text-center bg-yellow-400 h-16">
+    <h1 class="pt-6 cursor-pointer">Back to top</h1>
+  </div>
+  <div class="md:flex  bg-black text-white pb-20">
+    <div class="flex text-ss px-5 md:text-sm">
     <div>
       <div class="pt-28 font-bold">
-        <a class="pl-36" href="">More</a>
-      </div>
-      <div class="pt-5">
-        <a class="pl-36" href="">FAQ's</a>
-      </div>
-      <div class="pt-5">
-        <a class="pl-36" href="">ContactUS</a>
-      </div>
-      <div class="pt-5">
-        <a class="pl-36" href="">Donate</a>
-      </div>
-      <div class="pt-5">
-        <a class="pl-36" href="">Blog</a>
-      </div>
+      <a class="md:pl-60" href="">Home</a>
     </div>
-    <div>
-      <div class="pt-28 font-bold">
-        <a class="pl-36" href="">Connect</a>
-      </div>
-      <div class="pt-5">
-        <a class="pl-36" href="">Facebook</a>
-      </div>
-      <div class="pt-5">
-        <a class="pl-36" href="">Instagram</a>
-      </div>
-      <div class="pt-5">
-        <a class="pl-36" href="">Twitter</a>
-      </div>
-      <div class="pt-5">
-        <a class="pl-36" href="">Linkedin</a>
-      </div>
+    <div class="pt-5">
+      <a class="md:pl-60" href="">AboutUS</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-60" href="">Ourservices</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-60" href="">Getinvolved</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-60" href="">Causes</a>
     </div>
   </div>
-  <div class="block pt-32 pl-32">
-    <div class="text-4xl font-bold">
-      <h1>Subscribe to get latest <br>
-      updates</h1>
-  </div>
-  <div class="mb-3 pt-7">
-    <div class="relative mb-4 flex h-14 rounded-md w-10/11 bg-black flex-wrap items-stretch">
-      <input
-      type="search"
-      class="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-black focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
-        placeholder="Your email"
-        aria-label="Search"
-        aria-describedby="button-addon1" />
-          
-      <script>// Initialization for ES Users
-        import {
-          Ripple,
-          initTE,
-        } from "tw-elements";
-        
-        initTE({ Ripple });</script>
-        <button
-        class="relative z-[2] flex items-center rounded-r bg-white px-6 py-2.5 text-xs font-medium uppercase leading-tight text-black shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
-        type="button"
-        id="button-addon1"
-        data-te-ripple-init
-        data-te-ripple-color="light">
-        Subscribe
-      </button>
+  <div>
+    <div class="pt-28 font-bold">
+      <a class="md:pl-36 pl-10" href="">More</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-36 pl-10" href="">FAQ's</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-36 pl-10" href="">ContactUS</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-36 pl-10" href="">Donate</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-36 pl-10" href="">Blog</a>
     </div>
   </div>
+  <div>
+    <div class="pt-28 font-bold">
+      <a class="md:pl-36 pl-6" href="">Connect</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-36 pl-6" href="">Facebook</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-36 pl-6" href="">Instagram</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-36 pl-6" href="">Twitter</a>
+    </div>
+    <div class="pt-5">
+      <a class="md:pl-36 pl-6" href="">Linkedin</a>
+    </div>
+  </div>
+</div>
+<div class="block pt-32 px-5 lg:pl-32">
+  <div class="text-4xl font-bold">
+    <h1>Subscribe to get latest <br>
+    updates</h1>
+</div>
+<div class="mb-3 pt-7">
+  <div class="relative mb-4 flex h-14 rounded-md w-10/11 bg-black flex-wrap items-stretch">
+    <input
+    type="search"
+    class="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-black focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+      placeholder="Your email"
+      aria-label="Search"
+      aria-describedby="button-addon1" />
+
+    <!--Search button-->
+    <script>// Initialization for ES Users
+      import {
+        Ripple,
+        initTE,
+      } from "tw-elements";
+      
+      initTE({ Ripple });</script>
+      <button
+      class="relative z-[2] flex items-center rounded-r bg-white px-6 py-2.5 text-xs font-medium uppercase leading-tight text-black shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+      type="button"
+      id="button-addon1"
+      data-te-ripple-init
+      data-te-ripple-color="light">
+      Subscribe
+    </button>
+  </div>
+</div>
 </div>
 </div>
 </footer>
