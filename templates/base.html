@@ -499,9 +499,13 @@
               <div class="popup-content bg-white p-6 max-w-screen-md text-center relative">
                 <!-- Place the content you want to display in the pop-up here -->
                 <div>
-                  <h1 id="trustName"></h1>
-                  <h2 id="trustTitle"></h2>
-                  <p id="trustDescription"></p>
+                  <h1 class="font-semibold text-yellow-400">MahaAkshayamSivam Trust</h1>
+                  <h1 class="font-bold text-center text-2xl">Join Us To Serve And Save The Poor</h1>
+                  {% if item in items %}
+                  <h1 class="font-light text-black text-left">{{ item.name }}</h1>
+                  <h2 class="font-light text-black text-left">{{ item.title }}</h2>
+                  <p class="font-light text-black text-left">{{ item.description }}</p>
+                  {% endif %}
                 </div>
                 <img id="qrcode" class="mx-10 my-10" src="" alt="QR Code">
                 <!-- Cross SVG icon for closing the pop-up -->
@@ -520,6 +524,7 @@
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
+                <h1>Scan the QR code to pay money And Join Us </h1>
               </div>
             </div>
             
@@ -542,8 +547,6 @@
               }
               
               
-            </script>
-            
             </script>
               <div data-aos="fade-right" class="text-red-500 font-bold md:pl-28 px-5 pt-10 md:pt-10">
                 <h1>TO BE GIVEN _______________</h1>
