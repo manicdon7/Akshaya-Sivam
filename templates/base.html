@@ -355,13 +355,13 @@
                       <div class="xl:pl-60 md:pl-60  pt-14 text-sm text-black font-bold">
                         <h2>OUR MISSION</h2>
                       </div>
-                      <div class="mlg:pl-60  lg:pl-60 md:pl-10 pt-4 font-bold text-2xl" data-aos="fade-right">
+                      <div class="md:pl-60 pt-4 font-bold text-2xl" data-aos="fade-right">
                         <h1>Empowering Lives Through <br>
                           Compassionate Outreach: Providing <br>
                           Essential Support to the Marginalized
                         </h1>
                       </div>
-                      <p class="mlg:pl-60 lg:pl-60  md:pl-10 sm:pl-10 ss:pl-10 xs:pl-10 pt-5" data-aos="fade-up">
+                      <p class="md:pl-60 sm:pl-10 ss:pl-10 xs:pl-10 pt-5" data-aos="fade-up">
                         We offer free/affordable food, education, and medical care to the <br>
                          marginalized. Education empowers children and elders for a brighter <br>
                         future. Medical support without financial barriers for better health. <br>
@@ -375,7 +375,7 @@
                       <div class=" pl-36 xl:pl-40  mlg:pl-40 md:pl-40 sm:pl-10 pt-14 xs:pl-10 ss:pl-10 text-sm text-black font-bold">
                         <h2>OUR VISION</h2>
                       </div>
-                      <div class="pl-16 -ml-4  pl-40 pt-4 font-bold text-2xl" data-aos="fade-left">
+                      <div class="ml-36 md:pl-4 pt-4 font-bold text-2xl" data-aos="fade-left">
                         <h1>Building a Compassionate and <br>
                            Inclusive Society: Our Vision for a <br>
                             Better Tomorrow <br>
@@ -448,7 +448,7 @@
                   </div>
                   <div class="">
                     <div class="">
-                        <div class="grid md:grid-cols-4 grid-cols-1 px-5 pt-5 md:gap-8 md:pl-10" style="margin-left: 1%;">
+                        <div class="grid md:grid-cols-4 grid-cols-1 px-5 pt-5 md:gap-8 md:px-5">
                           {% for item in items %}
                 <div class="pt-3">
                     <div class="shadow-2xl w-80" data-aos="flip-left">
@@ -495,6 +495,56 @@
             </div>
             </div>
             </div>
+            <div class="overlay hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+              <div class="popup-content bg-white p-6 max-w-screen-md text-center relative">
+                <!-- Place the content you want to display in the pop-up here -->
+                <div>
+                  <h1 id="trustName"></h1>
+                  <h2 id="trustTitle"></h2>
+                  <p id="trustDescription"></p>
+                </div>
+                <img id="qrcode" class="mx-10 my-10" src="" alt="QR Code">
+                <!-- Cross SVG icon for closing the pop-up -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute top-3 right-3 cursor-pointer text-black w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  onclick="closePopup()"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </div>
+            </div>
+            
+            <script>
+              
+              function showQRCode() {
+                // Set the QR code image source (replace with the actual image path)
+                const qrCodeImagePath = "../static/assets/ASK.png";
+                document.getElementById("qrcode").src = qrCodeImagePath;
+              
+                // Show the overlay and pop-up
+                const overlay = document.querySelector(".overlay");
+                overlay.classList.remove("hidden");
+              }
+              
+              function closePopup() {
+                // Hide the overlay and pop-up
+                const overlay = document.querySelector(".overlay");
+                overlay.classList.add("hidden");
+              }
+              
+              
+            </script>
+            
+            </script>
               <div data-aos="fade-right" class="text-red-500 font-bold md:pl-28 px-5 pt-10 md:pt-10">
                 <h1>TO BE GIVEN _______________</h1>
               </div>
@@ -502,7 +552,7 @@
                 <h1>We Believe that We can Save <br>
                   More Lifes with you</h1>
               </div>
-              <div class="md:block md:pl-16">
+              <div class="md:flex md:pl-16">
                 <div class="md:pl-8 px-5 pt-10" data-aos="flip-right">
                   <img src="static/assets/people rised.png" alt="rised">
                 </div>
@@ -520,11 +570,11 @@
                 <div class=" font-semibold mt-10 mx-5 md:font-bold md:mt-20 md:ml-28 md:h-96" style="background-image: url(static/assets/BG.png); background-repeat: no-repeat;">
                   <h2 class=" md:pt-32 pt-10 text-2xl md:text-5xl text-center text-white">You can contribute to provide a place 
                     for children with special needs!</h2>
-                    <div class="flex justify-center items-centers grid-cols-2 pt-5 md:content-center">
-                      <div class="md:pl-96 md:pt-12 px-5">
+                    <div class="flex justify-center pt-5">
+                      <div class="md:pt-12 px-5">
                         <button class="bg-yellow-300 hover:bg-white hover:text-black md:h-11 md:w-40 font-semibold rounded-md">Join as a volunteer</button>
                       </div>
-                      <div class="md:pl-40 px-10 md:pt-12 pb-10 border-yellow-300">
+                      <div class="md:pl-40 px-5 md:pt-12 pb-10 border-yellow-300">
                         <button class="bg-white hover:bg-yellow-300 hover:text-black md:h-10 md:w-28 font-semibold h-10 w-36 rounded-md">Donate</button>
                       </div>
                     </div>
