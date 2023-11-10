@@ -442,7 +442,7 @@
                     <h1 class="">LATEST CAUSES</h1>
                     <h1 class="underline w-8">_______________</h1>
                   </div>
-                  <div class="font-bold text-5xl md:pl-20 pt-20 pl-8" data-aos="fade-up">
+                  <!-- <div class="font-bold text-5xl md:pl-20 pt-20 pl-8" data-aos="fade-up">
                     <h1 class="">Find the popular cause <br>
                       and donate them</h1>
                   </div>
@@ -490,7 +490,60 @@
           </div>
           {% endfor %}
                   
+      </div> -->
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="font-bold text-5xl pt-20">Find the popular cause <br> and donate them</h1>
+          </div>
+        </div>
+        <div class="row">
+          {% for item in items %}
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
+              <div class="shadow-lg">
+                <div class="p-4">
+                  <div class="text-center">
+                    <img src="{{ item.image.url }}" alt="donation-image" class="w-100 mb-3">
+                  </div>
+                  <h1 class="font-bold text-yellow-300 text-center">{{ item.name }}</h1>
+                  <h2 class="font-bold text-lg text-center">{{ item.title }}</h2>
+                  <p class="text-center">{{ item.description }}</p>
+                </div>
+                <div class="p-4 text-center">
+                  <div class="font-bold">Donate</div>
+                  <!-- Add progress bar if needed -->
+                  <!-- Show raised amount if needed -->
+                  <div class="font-bold">Goal: Rs {{ item.goal }}</div>
+                  <div class="pt-2 pb-4">
+                    <button class="btn btn-warning w-100">Donate</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
       </div>
+      
+      <style>
+      /* Media query for larger screens (laptops) */
+      @media (min-width: 992px) {
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .mb-4 {
+          margin-bottom: 0;
+        }
+      }
+      </style>
+
+
+
+
+
+
+
               <div data-aos="fade-right" class="text-red-500 font-bold pl-28 pt-10">
                 <h1>TO BE GIVEN _______________</h1>
               </div>
