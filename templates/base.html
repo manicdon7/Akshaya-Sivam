@@ -442,15 +442,20 @@
                     <h1 class="">LATEST CAUSES</h1>
                     <h1 class="underline w-8">_______________</h1>
                   </div>
-                  <!-- <div class="font-bold text-5xl md:pl-20 pt-20 pl-8" data-aos="fade-up">
+
+                     <!--try-->
+
+
+                  <div class="font-bold text-5xl md:pl-20 pt-20 pl-8" data-aos="fade-up">
                     <h1 class="">Find the popular cause <br>
                       and donate them</h1>
                   </div>
-                  <div class="xl:flex pl-16 grid mlg:grid-cols-4 gap-12 lg:grid-cols-3 lg:gap-12 md:grid-cols-3 md:gap-10 sm:grid-cols-2 sm:gap-8 md:pl-10" style="margin-left: 1%;">
-                    {% for item in items %}
+                  <!-- <div class="xl:flex pl-16 grid mlg:grid-cols-4 gap-12 lg:grid-cols-3 lg:gap-12 md:grid-cols-3 md:gap-10 sm:grid-cols-2 sm:gap-8 md:pl-10" style="margin-left: 1%;"> -->
+                   <div class="items-center gap-12 xl:flex mlg:flex lg:flex md:block sm:block xl:pl-28 mlg:pl-28 lg:pl-28 md:pl-16 sm:pl-8">
+                     {% for item in items %}
           <div class="pt-3">
               <div class="shadow-lg w-80" data-aos="flip-left">
-                  <div class="pl-7 pt-10" style="padding-left: 2.2rem;">
+                  <div class="md:pl-7 pt-10" style="padding-left: 2.2rem;">
                       <img style="background-size: cover;" src="{{ item.image.url }}" alt="donation-image">
                   </div>
                   <div class="pl-14 pt-4 font-bold text-yellow-300">
@@ -490,56 +495,10 @@
           </div>
           {% endfor %}
                   
-      </div> -->
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h1 class="font-bold text-5xl pt-20">Find the popular cause <br> and donate them</h1>
-          </div>
-        </div>
-        <div class="row">
-          {% for item in items %}
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
-              <div class="shadow-lg">
-                <div class="p-4">
-                  <div class="text-center">
-                    <img src="{{ item.image.url }}" alt="donation-image" class="w-100 mb-3">
-                  </div>
-                  <h1 class="font-bold text-yellow-300 text-center">{{ item.name }}</h1>
-                  <h2 class="font-bold text-lg text-center">{{ item.title }}</h2>
-                  <p class="text-center">{{ item.description }}</p>
-                </div>
-                <div class="p-4 text-center">
-                  <div class="font-bold">Donate</div>
-                  <!-- Add progress bar if needed -->
-                  <!-- Show raised amount if needed -->
-                  <div class="font-bold">Goal: Rs {{ item.goal }}</div>
-                  <div class="pt-2 pb-4">
-                    <button class="btn btn-warning w-100">Donate</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-        </div>
       </div>
+
+      <!--tryend-->
       
-      <style>
-      /* Media query for larger screens (laptops) */
-      @media (min-width: 992px) {
-        .row {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .mb-4 {
-          margin-bottom: 0;
-        }
-      }
-      </style>
-
-
-
 
 
 
